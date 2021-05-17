@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttentipRecipes">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.OnBoarding"></activity>
         <activity
-            android:name=".OnBoarding"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AttentipRecipes.NoActionBar">
             <intent-filter>
