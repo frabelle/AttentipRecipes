@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AttentipRecipes</string>
     <string name="action_settings">Settings</string>
+    <string name="API_KEY">4b7a6ec8a963480c9be6dc162d2afb29</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -12,4 +13,5 @@
     <string name="nicequote"> "A Healthy Food, for a Wealthy Mood" </string>
     <string name="cuisines">Cuisines</string>
     <string name="recipes">Recipes</string>
+
 </resources>

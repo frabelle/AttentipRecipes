@@ -1,4 +1,4 @@
-package com.uca.attentiprecipes.utils
+package com.uca.attentiprecipes.utils.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uca.attentiprecipes.R
 import com.uca.attentiprecipes.model.Cuisine
-import com.uca.attentiprecipes.utils.data.TypesMockSource
 
 class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
 
