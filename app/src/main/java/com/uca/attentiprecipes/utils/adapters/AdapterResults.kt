@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.uca.attentiprecipes.R
 import com.uca.attentiprecipes.model.Recipes
+import com.uca.attentiprecipes.model.ResultsSearch
 import kotlinx.android.synthetic.main.item_recipes.view.*
 
-class AdapterRecipes() : RecyclerView.Adapter<AdapterRecipes.ViewHolder>() {
+class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
 
-    lateinit var items: ArrayList<Recipes>
+    lateinit var items: ArrayList<ResultsSearch>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_recipes, parent, false))
@@ -21,10 +22,10 @@ class AdapterRecipes() : RecyclerView.Adapter<AdapterRecipes.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = items[position]
 
-        holder.namerecipe.text = model.name
+        holder.namerecipe.text = model.searchResults[0].results.name
 
         Picasso.get()
-            .load(model.image)
+            .load(model.searchResults[0].results.image)
             .into( holder.image)
 
 
@@ -37,8 +38,8 @@ class AdapterRecipes() : RecyclerView.Adapter<AdapterRecipes.ViewHolder>() {
             0
         }    }
 
-    fun setRecipes(items: List<Recipes>){
-        this.items = items as ArrayList<Recipes>
+    fun setResults(items: List<ResultsSearch>){
+        this.items = items as ArrayList<ResultsSearch>
         notifyDataSetChanged()
     }
 
@@ -46,8 +47,6 @@ class AdapterRecipes() : RecyclerView.Adapter<AdapterRecipes.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val namerecipe: TextView = view.recipename
         val image: ImageView = view.imagerecipe
-
     }
-
 
 }
