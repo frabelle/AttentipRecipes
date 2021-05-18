@@ -9,14 +9,14 @@ class ResultsNetworkMapper
 constructor(): EntityMapper<ResultsNetworkEntity, ResultsSearch>{
     override fun mapFromEntity(entity: ResultsNetworkEntity): ResultsSearch {
         return ResultsSearch(
-            //searchResults = entity.searchResults
+            searchResults = entity.searchResults,
             totalResults = entity.totalResults
         )
     }
 
     override fun mapToEntity(domainModel: ResultsSearch): ResultsNetworkEntity {
         return ResultsNetworkEntity(
-            //searchResults = domainModel.searchResults
+            searchResults = domainModel.searchResults,
             totalResults = domainModel.totalResults
         )
     }

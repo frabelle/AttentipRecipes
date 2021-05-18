@@ -14,8 +14,8 @@ class ResultsCacheEntity (
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
 
-//    @ColumnInfo(name = "results")
-//    var searchResults: List<Recipes>
+    @ColumnInfo(name = "results")
+    var searchResults: List<Recipes>,
 
     @ColumnInfo(name = "totalResults")
     var totalResults: Int

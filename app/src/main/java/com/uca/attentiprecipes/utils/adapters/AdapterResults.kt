@@ -14,16 +14,18 @@ import kotlinx.android.synthetic.main.item_recipes.view.*
 
 class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
 
-    lateinit var items: ResultsSearch
+    lateinit var items: List<ResultsSearch>
+    //lateinit var items: List<Recipes>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_recipes, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val model = items
+        val model = items[position]
+        //val rc = recipes[position]
 
-        holder.namerecipe.text = model.totalResults.toString()
-//
+        holder.namerecipe.text = model.searchResults[position].name
+
 //        Picasso.get()
 //            .load(model.image)
 //            .into( holder.image)
@@ -38,8 +40,8 @@ class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
             0
         }    }
 
-    fun setResults(items: ResultsSearch){
-        this.items = items as ResultsSearch
+    fun setResults(items: List<ResultsSearch>){
+        this.items = items as ArrayList<ResultsSearch>
         notifyDataSetChanged()
     }
 

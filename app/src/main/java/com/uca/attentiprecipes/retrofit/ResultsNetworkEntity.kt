@@ -7,9 +7,9 @@ import com.uca.attentiprecipes.model.TypeResultsSearch
 
 class ResultsNetworkEntity (
 
-//    @SerializedName("results")
-//    @Expose
-//    var searchResults : List<Recipes>
+    @SerializedName("results")
+    @Expose
+    var searchResults : List<Recipes>,
 
     @SerializedName("totalResults")
     @Expose

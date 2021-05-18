@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.uca.attentiprecipes.model.Recipes
 import com.uca.attentiprecipes.utils.Converters
 
-@Database(entities = [Recipes::class, ResultsCacheEntity::class], version = 1)
+@Database(entities = [Recipes::class, ResultsCacheEntity::class], version = 2)
 @TypeConverters(Converters::class)
 abstract class AttentipDatabase: RoomDatabase() {
     companion object{

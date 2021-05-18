@@ -10,14 +10,14 @@ constructor(): EntityMapper<ResultsCacheEntity, ResultsSearch>{
 
     override fun mapFromEntity(entity: ResultsCacheEntity): ResultsSearch {
         return ResultsSearch(
-            //searchResults = entity.searchResults
+                searchResults = entity.searchResults,
         totalResults = entity.totalResults
         )
     }
 
     override fun mapToEntity(domainModel: ResultsSearch): ResultsCacheEntity {
         return ResultsCacheEntity(
-            //searchResults = domainModel.searchResults
+            searchResults = domainModel.searchResults,
         totalResults = domainModel.totalResults
         )
     }
