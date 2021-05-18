@@ -58,7 +58,7 @@ constructor(
         lifecycleScope.launch {
             viewModel.dataState.collect {
                 when (it) {
-                    is DataState.SuccessRecipe -> {
+                    is DataState.SuccessRecipeInfo -> {
                         displayProgressBar(false)
                         recipeAdapter.setResults(it.recipe)
                     }

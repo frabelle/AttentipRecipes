@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.item_recipes.view.*
 
 class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
 
-    lateinit var items: List<ResultsSearch>
+    lateinit var items: ArrayList<Recipes>
     //lateinit var items: List<Recipes>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -24,24 +24,24 @@ class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
         val model = items[position]
         //val rc = recipes[position]
 
-        holder.namerecipe.text = model.searchResults[position].name
+        holder.namerecipe.text = model.name
 
-//        Picasso.get()
-//            .load(model.image)
-//            .into( holder.image)
+        Picasso.get()
+            .load(model.image)
+            .into( holder.image)
 
 
     }
 
     override fun getItemCount(): Int {
         return if (::items.isInitialized){
-            1
+            items.size
         }else{
             0
         }    }
 
-    fun setResults(items: List<ResultsSearch>){
-        this.items = items as ArrayList<ResultsSearch>
+    fun setResults(items: List<Recipes>){
+        this.items = items as ArrayList<Recipes>
         notifyDataSetChanged()
     }
 

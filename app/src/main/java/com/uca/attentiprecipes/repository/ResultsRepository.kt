@@ -41,7 +41,12 @@ class ResultsRepository (
                 Log.d("Info de recipes", recipesCache.toString())
 
             }catch (e:Exception){
-                emit(DataState.ErrorRecipe(e))
+                //emit(DataState.ErrorRecipe(e))
+                val resultsCache = resultsDao.get()
+                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
+
+                val recipesCache = resultsDao.getRecipes()
+                emit(DataState.SuccessRecipeInfo(recipesCache))
             }
 
         }
