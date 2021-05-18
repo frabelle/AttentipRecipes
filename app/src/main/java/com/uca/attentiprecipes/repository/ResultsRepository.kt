@@ -22,14 +22,14 @@ class ResultsRepository (
             delay(1000)
             try {
                 val recipeData = recipeRetroFit.get()
-                val recipeMap = resultsNetworkMapper.mapFromEntityListResults(recipeData)
+                val recipeMap = resultsNetworkMapper.mapFromEntity(recipeData)
 
-                for (temp in recipeMap){
-                    resultsDao.insert(resultsCacheMapper.mapToEntity(temp))
-                }
+                //for (temp in recipeMap){
+                    resultsDao.insert(resultsCacheMapper.mapToEntity(recipeMap))
+                //}
 
                 val resultsCache = resultsDao.get()
-                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
+                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntity(resultsCache)))
 
             }catch (e:Exception){
                 emit(DataState.ErrorRecipe(e))

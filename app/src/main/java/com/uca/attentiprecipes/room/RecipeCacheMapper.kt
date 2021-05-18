@@ -12,9 +12,9 @@ constructor(): EntityMapper<RecipeCacheEntity, Recipes>{
         return Recipes(
             id = entity.id,
             name = entity.name,
-            link = entity.link,
-            image = entity.image,
-            content = entity.content
+//            link = entity.link,
+            image = entity.image
+//            content = entity.content
         )
     }
 
@@ -22,9 +22,9 @@ constructor(): EntityMapper<RecipeCacheEntity, Recipes>{
         return RecipeCacheEntity(
             id = domainModel.id,
             name = domainModel.name,
-            image = domainModel.image,
-            link = domainModel.link,
-            content = domainModel.content
+            image = domainModel.image
+//            link = domainModel.link,
+//            content = domainModel.content
         )
     }
 

@@ -12,8 +12,8 @@ constructor(): EntityMapper<RecipeNetworkEntity, Recipes> {
             id = entity.id,
             name = entity.name,
             image = entity.image,
-            link = entity.link,
-            content = entity.content
+//            link = entity.link,
+//            content = entity.content
         )
     }
 
@@ -22,8 +22,8 @@ constructor(): EntityMapper<RecipeNetworkEntity, Recipes> {
             id = domainModel.id,
             name = domainModel.name,
             image = domainModel.image,
-            link = domainModel.link,
-            content = domainModel.content
+//            link = domainModel.link,
+//            content = domainModel.content
         )
     }
 

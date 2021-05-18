@@ -16,12 +16,12 @@ class RecipeNetworkEntity(
         @Expose
         var image: String,
 
-        @SerializedName("link")
-        @Expose
-        var link: String,
-
-        @SerializedName("content")
-        @Expose
-        var content: String
+//        @SerializedName("link")
+//        @Expose
+//        var link: String,
+//
+//        @SerializedName("content")
+//        @Expose
+//        var content: String
 
 )

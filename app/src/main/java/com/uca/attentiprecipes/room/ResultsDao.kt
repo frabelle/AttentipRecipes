@@ -12,5 +12,5 @@ interface ResultsDao {
     suspend fun insert(resultsCacheEntity: ResultsCacheEntity): Long
 
     @Query("SELECT * FROM results")
-    suspend fun get(): List<ResultsCacheEntity>
+    suspend fun get(): ResultsCacheEntity
 }

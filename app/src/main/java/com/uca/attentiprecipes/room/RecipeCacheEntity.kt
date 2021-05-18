@@ -16,10 +16,10 @@ class RecipeCacheEntity (
 
     @ColumnInfo(name = "image")
     var image: String,
-
-    @ColumnInfo(name = "link")
-    var link: String,
-
-    @ColumnInfo(name = "content")
-    var content: String
+//
+//    @ColumnInfo(name = "link")
+//    var link: String,
+//
+//    @ColumnInfo(name = "content")
+//    var content: String
 )
