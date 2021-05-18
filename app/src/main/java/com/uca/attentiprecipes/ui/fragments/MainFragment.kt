@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.uca.attentiprecipes.R
@@ -37,13 +38,14 @@ constructor(
         subscribeObservers()
 
         val layoutManager =
-            LinearLayoutManager(
-                requireActivity().applicationContext,
-                LinearLayoutManager.VERTICAL,
-                false
-            )
-        layoutManager.reverseLayout = true
-        layoutManager.stackFromEnd = true
+                GridLayoutManager(
+                        requireActivity().applicationContext,
+                        2,
+                        GridLayoutManager.VERTICAL,
+                        false
+                )
+//        layoutManager.reverseLayout = true
+//        layoutManager.stackFromEnd = true
         recyclerViewCuisine.layoutManager = layoutManager
         recyclerViewCuisine.adapter = recipeAdapter
 

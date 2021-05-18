@@ -25,9 +25,7 @@ class ResultsRepository (
                 val recipeData = recipeRetroFit.get()
                 val recipeMap = resultsNetworkMapper.mapFromEntity(recipeData)
 
-                //for (temp in recipeMap){
-                    resultsDao.insert(resultsCacheMapper.mapToEntity(recipeMap))
-                //}
+                resultsDao.insert(resultsCacheMapper.mapToEntity(recipeMap))
 
                 for (temp in recipeMap.searchResults){
                     resultsDao.insertRecipes(temp)

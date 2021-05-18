@@ -10,22 +10,22 @@
     android:layout_marginVertical="8dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="40dp"
+    app:cardCornerRadius="20dp"
     android:elevation="10dp"
     style="@style/Widget.MaterialComponents.CardView">
 
     <ImageView
         android:id="@+id/imagerecipe"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:src="@drawable/italianfood"
         android:background="@color/green_dark"
         android:scaleType="centerCrop"
         />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -33,9 +33,10 @@
             android:id="@+id/recipename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:text="Recipes's name"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textAllCaps="true"
