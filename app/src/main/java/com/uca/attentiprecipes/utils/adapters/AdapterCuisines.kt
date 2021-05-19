@@ -4,23 +4,26 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uca.attentiprecipes.R
 import com.uca.attentiprecipes.model.Cuisine
+import com.uca.attentiprecipes.model.Recipes
+import kotlinx.android.synthetic.main.item_recipes.view.*
+import kotlinx.android.synthetic.main.item_types.view.*
 
 class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
 
-    var items: MutableList<Cuisine> = ArrayList()
-    lateinit var context: Context
+    var types: MutableList<Cuisine>  = ArrayList()
 
-    fun AdapterCuisines(items : MutableList<Cuisine>){
-        this.items = items
+    fun RecyclerAdapter(types : MutableList<Cuisine>){
+        this.types = types
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val items = items.get(position)
-        holder.bind(items, context)
+        val item = types.get(position)
+        holder.bind(item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,15 +32,17 @@ class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return types.size
     }
 
     class ViewHolder(view:View): RecyclerView.ViewHolder(view){
 
-        val typename = view.findViewById(R.id.nametype) as TextView
+        val typename: TextView = view.nametype
+        val imageView: ImageView = view.imagetype
 
-        fun bind(items: Cuisine, context: Context){
-            typename.text = items.typename
+        fun bind(type:Cuisine){
+           typename.text = type.typename
+            imageView.setImageResource(type.image)
         }
 
     }

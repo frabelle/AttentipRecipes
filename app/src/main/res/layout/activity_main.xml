@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:forceDarkAllowed="false"
     tools:context=".ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -17,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimaryVariant"
+            android:background="#2c2c2c"
             app:popupTheme="@style/Theme.AttentipRecipes.PopupOverlay">
 
             <ImageView
@@ -32,7 +33,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.fragment.app.FragmentContainerView
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/main_fragment_container"
@@ -49,7 +50,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green_dark"
+        android:background="#2c2c2c"
         app:menu="@menu/menu_bottom"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
