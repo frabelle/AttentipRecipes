@@ -18,7 +18,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#2c2c2c"
+            android:background="?attr/colorPrimaryVariant"
             app:popupTheme="@style/Theme.AttentipRecipes.PopupOverlay">
 
             <ImageView
@@ -50,7 +50,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#2c2c2c"
+        android:background="@color/green_dark"
         app:menu="@menu/menu_bottom"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
