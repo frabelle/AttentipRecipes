@@ -20,6 +20,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
+@AndroidEntryPoint
 class CuisinesFragment
 constructor(
 ): Fragment(R.layout.fragment_cuisines){

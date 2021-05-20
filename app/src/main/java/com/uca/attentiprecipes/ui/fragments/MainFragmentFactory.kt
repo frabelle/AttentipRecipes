@@ -16,6 +16,10 @@ constructor(
                 val fragment = MainFragment()
                 fragment
             }
+            CuisinesFragment::class.java.name -> {
+                val fragment = CuisinesFragment()
+                fragment
+            }
             else -> super.instantiate(classLoader, className)
         }
     }
