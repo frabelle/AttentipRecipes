@@ -6,7 +6,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uca.attentiprecipes.intent.Intent
-import com.uca.attentiprecipes.repository.RecipesRepository
 import com.uca.attentiprecipes.repository.ResultsRepository
 import com.uca.attentiprecipes.utils.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi

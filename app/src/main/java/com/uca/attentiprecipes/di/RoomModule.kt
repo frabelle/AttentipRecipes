@@ -3,7 +3,6 @@ package com.uca.attentiprecipes.di
 import android.content.Context
 import androidx.room.Room
 import com.uca.attentiprecipes.room.AttentipDatabase
-import com.uca.attentiprecipes.room.RecipeDao
 import com.uca.attentiprecipes.room.ResultsDao
 import dagger.Module
 import dagger.Provides
@@ -21,12 +20,6 @@ object RoomModule {
     fun provideRecipeDb(@ApplicationContext context: Context): AttentipDatabase{
         return Room
             .databaseBuilder(context, AttentipDatabase::class.java, AttentipDatabase.DATABASE_NAME).fallbackToDestructiveMigration().build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideRecipes(attentipDatabase: AttentipDatabase): RecipeDao{
-        return attentipDatabase.recipeDao()
     }
 
     @Singleton

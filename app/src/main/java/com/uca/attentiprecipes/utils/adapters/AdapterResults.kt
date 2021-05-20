@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.item_recipes.view.*
 class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
 
     lateinit var items: ArrayList<Recipes>
-    //lateinit var items: List<Recipes>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_recipes, parent, false))

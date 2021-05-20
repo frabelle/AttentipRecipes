@@ -1,9 +1,11 @@
 package com.uca.attentiprecipes.retrofit
 
 import com.uca.attentiprecipes.R
+import com.uca.attentiprecipes.utils.data.Constants
+import com.uca.attentiprecipes.utils.data.Constants.API_KEY_SPOONACULAR
 import retrofit2.http.GET
 
 interface RecipeRetroFit {
-    @GET("recipes/complexSearch?apiKey=4b7a6ec8a963480c9be6dc162d2afb29&query=italian&number=30" )
+    @GET("recipes/complexSearch?apiKey="+ API_KEY_SPOONACULAR + "&addRecipeInformation=true&number=15")
     suspend fun get(): ResultsNetworkEntity
 }

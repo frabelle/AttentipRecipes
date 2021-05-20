@@ -13,5 +13,7 @@
     <string name="nicequote"> "A Healthy Food, for a Wealthy Mood" </string>
     <string name="cuisines">Cuisines</string>
     <string name="recipes">Recipes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

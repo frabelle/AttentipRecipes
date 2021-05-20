@@ -25,11 +25,33 @@ class Recipes(
         @Expose
         var image: String,
 
-//        @SerializedName("link")
+        @ColumnInfo(name = "readyInMinutes")
+        @SerializedName("readyInMinutes")
+        @Expose
+        var readyInMinutes: Int,
+
+        @ColumnInfo(name = "sourceUrl")
+        @SerializedName("sourceUrl")
+        @Expose
+        var sourceUrl: String,
+
+        @ColumnInfo(name = "pricePerServing")
+        @SerializedName("pricePerServing")
+        @Expose
+        var pricePerServing: Float,
+
+        @ColumnInfo(name = "servings")
+        @SerializedName("servings")
+        @Expose
+        var servings: Int,
+
+        @ColumnInfo(name = "summary")
+        @SerializedName("summary")
+        @Expose
+        var summary: String,
+
+//        @ColumnInfo(name = "cuisines")
+//        @SerializedName("cuisines")
 //        @Expose
-//        var link: String,
-//
-//        @SerializedName("content")
-//        @Expose
-//        var content: String
+//        var cuisines: List<String>
 )

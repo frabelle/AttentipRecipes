@@ -10,6 +10,5 @@ sealed class DataState {
     data class SuccessRecipe(val recipe: List<ResultsSearch>): DataState()
     data class ErrorRecipe(val exception: Exception): DataState()
     data class SuccessRecipeInfo(val recipe: List<Recipes>): DataState()
-    data class ErrorRecipeInfo(val exception: Exception): DataState()
     object Loading: DataState()
 }

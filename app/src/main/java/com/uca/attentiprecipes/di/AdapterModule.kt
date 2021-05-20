@@ -1,7 +1,6 @@
 package com.uca.attentiprecipes.di
 
 import android.app.Application
-import com.uca.attentiprecipes.utils.adapters.AdapterRecipes
 import com.uca.attentiprecipes.utils.adapters.AdapterResults
 import dagger.Module
 import dagger.Provides
@@ -12,12 +11,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 object AdapterModule {
-
-    @Singleton
-    @Provides
-    fun provideAdapterRecipes(application: Application): AdapterRecipes{
-        return AdapterRecipes()
-    }
 
     @Singleton
     @Provides

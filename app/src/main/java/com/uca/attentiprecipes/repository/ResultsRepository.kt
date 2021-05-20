@@ -1,11 +1,8 @@
 package com.uca.attentiprecipes.repository
 
 import android.util.Log
-import com.uca.attentiprecipes.retrofit.RecipeNetworkMapper
 import com.uca.attentiprecipes.retrofit.RecipeRetroFit
 import com.uca.attentiprecipes.retrofit.ResultsNetworkMapper
-import com.uca.attentiprecipes.room.RecipeCacheMapper
-import com.uca.attentiprecipes.room.RecipeDao
 import com.uca.attentiprecipes.room.ResultsCacheMapper
 import com.uca.attentiprecipes.room.ResultsDao
 import com.uca.attentiprecipes.utils.DataState
@@ -39,7 +36,7 @@ class ResultsRepository (
                 Log.d("Info de recipes", recipesCache.toString())
 
             }catch (e:Exception){
-                //emit(DataState.ErrorRecipe(e))
+                emit(DataState.ErrorRecipe(e))
                 val resultsCache = resultsDao.get()
                 emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
 
