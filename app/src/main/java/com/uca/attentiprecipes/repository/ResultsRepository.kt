@@ -19,21 +19,28 @@ class ResultsRepository (
             emit(DataState.Loading)
             delay(1000)
             try {
-                val recipeData = recipeRetroFit.get()
-                val recipeMap = resultsNetworkMapper.mapFromEntity(recipeData)
-
-                resultsDao.insert(resultsCacheMapper.mapToEntity(recipeMap))
-
-                for (temp in recipeMap.searchResults){
-                    resultsDao.insertRecipes(temp)
-                }
 
                 val resultsCache = resultsDao.get()
-                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
-
                 val recipesCache = resultsDao.getRecipes()
+
+                //Se estableció esta condicional para ahorrar recursos debido a que la API establece cuotas diarias por request y points
+                if(resultsCache.isNullOrEmpty() || recipesCache.isNullOrEmpty()){
+                    val recipeData = recipeRetroFit.get()
+                    val recipeMap = resultsNetworkMapper.mapFromEntity(recipeData)
+
+                    resultsDao.insert(resultsCacheMapper.mapToEntity(recipeMap))
+
+                    for (temp in recipeMap.searchResults){
+                        resultsDao.insertRecipes(temp)
+                    }
+
+                }
+
+                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
                 emit(DataState.SuccessRecipeInfo(recipesCache))
-                Log.d("Info de recipes", recipesCache.toString())
+
+                val cuisineCache = resultsDao.getRecipes()
+                emit(DataState.SuccessRecipeByCuisine(cuisineCache))
 
             }catch (e:Exception){
                 emit(DataState.ErrorRecipe(e))

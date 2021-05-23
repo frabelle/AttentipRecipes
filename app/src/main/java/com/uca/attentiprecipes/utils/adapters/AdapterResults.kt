@@ -15,6 +15,11 @@ import kotlinx.android.synthetic.main.item_recipes.view.*
 class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
 
     lateinit var items: ArrayList<Recipes>
+    private var tapListener: ItemTapListener? = null
+
+    fun setOnItemTapListener(tapListener: ItemTapListener) {
+        this.tapListener = tapListener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_recipes, parent, false))
@@ -45,9 +50,20 @@ class AdapterResults() : RecyclerView.Adapter<AdapterResults.ViewHolder>() {
     }
 
 
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
         val namerecipe: TextView = view.recipename
         val image: ImageView = view.imagerecipe
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val model = items.get(adapterPosition)
+            tapListener?.onItemTap(model,adapterPosition)
+        }
+
+
     }
 
 }

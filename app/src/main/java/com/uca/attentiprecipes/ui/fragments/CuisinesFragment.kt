@@ -39,8 +39,7 @@ constructor(
                 GridLayoutManager.VERTICAL,
                 false
             )
-//        layoutManager.reverseLayout = true
-//        layoutManager.stackFromEnd = true
+
         recyclerTypeCuisine.layoutManager = layoutManager
         cuisineAdapter.RecyclerAdapter(data.getCuisines())
         recyclerTypeCuisine.adapter = cuisineAdapter

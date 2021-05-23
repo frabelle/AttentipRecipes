@@ -2,6 +2,7 @@ package com.uca.attentiprecipes.ui.fragments
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
+import com.uca.attentiprecipes.DetailsFragment
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
@@ -18,6 +19,10 @@ constructor(
             }
             CuisinesFragment::class.java.name -> {
                 val fragment = CuisinesFragment()
+                fragment
+            }
+            DetailsFragment::class.java.name -> {
+                val fragment = DetailsFragment()
                 fragment
             }
             else -> super.instantiate(classLoader, className)

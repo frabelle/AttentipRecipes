@@ -30,6 +30,11 @@ class Recipes(
         @Expose
         var readyInMinutes: Int,
 
+        @ColumnInfo(name = "sourceName")
+        @SerializedName("sourceName")
+        @Expose
+        var sourceName: String?,
+
         @ColumnInfo(name = "sourceUrl")
         @SerializedName("sourceUrl")
         @Expose
