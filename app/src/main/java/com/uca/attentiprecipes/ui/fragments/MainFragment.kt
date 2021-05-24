@@ -2,6 +2,7 @@ package com.uca.attentiprecipes.ui.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.viewModels
@@ -62,12 +63,14 @@ constructor(
 
         recipeAdapter.setOnItemTapListener(object: ItemTapListener{
             override fun onItemTap(recipes: Recipes, position: Int) {
-                findNavController().navigate(R.id.action_a_to_b)
+                val bundle= bundleOf("name" to recipes.name, "duration" to recipes.readyInMinutes,
+                                    "servings" to recipes.servings, "url" to recipes.sourceUrl, "sourceName" to recipes.sourceName,
+                                    "summary" to recipes.summary, "price" to recipes.pricePerServing, "image" to recipes.image)
+                findNavController().navigate(R.id.action_a_to_b, bundle)
             }
         })
 
     }
-
 
     private fun subscribeObservers() {
         lifecycleScope.launch {

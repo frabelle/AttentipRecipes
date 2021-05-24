@@ -1,6 +1,7 @@
 package com.uca.attentiprecipes.repository
 
 import android.util.Log
+import com.uca.attentiprecipes.DetailsFragment
 import com.uca.attentiprecipes.retrofit.RecipeRetroFit
 import com.uca.attentiprecipes.retrofit.ResultsNetworkMapper
 import com.uca.attentiprecipes.room.ResultsCacheMapper

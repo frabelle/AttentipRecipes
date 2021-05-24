@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AttentipRecipes</string>
+    <string name="app_name">Attentip</string>
     <string name="action_settings">Settings</string>
     <string name="API_KEY">4b7a6ec8a963480c9be6dc162d2afb29</string>
     <!-- Strings used for fragments for navigation -->

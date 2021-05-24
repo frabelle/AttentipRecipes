@@ -20,4 +20,5 @@ interface ResultsDao {
 
     @Query("SELECT * FROM recipes")
     suspend fun getRecipes(): List<Recipes>
+
 }

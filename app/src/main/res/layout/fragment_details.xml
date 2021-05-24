@@ -19,11 +19,12 @@
         app:layout_constraintVertical_bias="0"/>
 
     <TextView
-        android:id="@+id/nametype"
+        android:id="@+id/nametypeD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="8dp"
         android:text="Italian"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -51,6 +52,7 @@
         app:layout_constraintLeft_toLeftOf="parent">
 
         <TextView
+            android:id="@+id/duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
@@ -62,6 +64,7 @@
             android:fontFamily="sans-serif-condensed"/>
 
         <TextView
+            android:id="@+id/servings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -103,6 +106,7 @@
             />
 
         <TextView
+            android:id="@+id/infoDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
