@@ -1,5 +1,6 @@
 package com.uca.attentiprecipes.utils.adapters
 
+import com.uca.attentiprecipes.model.Cuisine
 import com.uca.attentiprecipes.model.Recipes
 
 interface ItemTapListener {

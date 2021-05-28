@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 
 class Cuisine(
         var typename: String,
-        var results: Int,
+        var url: String,
         @DrawableRes
         var image: Int
 )

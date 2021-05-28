@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 3,
-    "identityHash": "47d050f9bd17b257f41282eab67438ee",
+    "version": 4,
+    "identityHash": "25d8e0040db6a74e1c41904c85fd7561",
     "entities": [
       {
         "tableName": "recipes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `readyInMinutes` INTEGER NOT NULL, `sourceName` TEXT, `sourceUrl` TEXT NOT NULL, `calories` INTEGER NOT NULL, `servings` INTEGER NOT NULL, `summary` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `image` TEXT NOT NULL, `readyInMinutes` INTEGER NOT NULL, `sourceName` TEXT, `sourceUrl` TEXT NOT NULL, `healthScore` REAL NOT NULL, `servings` INTEGER NOT NULL, `summary` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -46,8 +46,8 @@
           },
           {
             "fieldPath": "calories",
-            "columnName": "calories",
-            "affinity": "INTEGER",
+            "columnName": "healthScore",
+            "affinity": "REAL",
             "notNull": true
           },
           {
@@ -108,7 +108,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '47d050f9bd17b257f41282eab67438ee')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '25d8e0040db6a74e1c41904c85fd7561')"
     ]
   }
 }

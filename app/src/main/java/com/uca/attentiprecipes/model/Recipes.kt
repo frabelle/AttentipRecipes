@@ -40,10 +40,10 @@ class Recipes(
         @Expose
         var sourceUrl: String,
 
-        @ColumnInfo(name = "pricePerServing")
-        @SerializedName("pricePerServing")
+        @ColumnInfo(name = "healthScore")
+        @SerializedName("healthScore")
         @Expose
-        var pricePerServing: Float,
+        var calories: Float,
 
         @ColumnInfo(name = "servings")
         @SerializedName("servings")

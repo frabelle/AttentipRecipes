@@ -25,7 +25,8 @@ class ResultsRepository (
                 val recipesCache = resultsDao.getRecipes()
 
                 //Se estableció esta condicional para ahorrar recursos debido a que la API establece cuotas diarias por request y points
-                if(resultsCache.isNullOrEmpty() || recipesCache.isNullOrEmpty()){
+                if(resultsCache.isNullOrEmpty() && recipesCache.isNullOrEmpty()){
+
                     val recipeData = recipeRetroFit.get()
                     val recipeMap = resultsNetworkMapper.mapFromEntity(recipeData)
 
@@ -35,13 +36,20 @@ class ResultsRepository (
                         resultsDao.insertRecipes(temp)
                     }
 
+                    emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsDao.get())))
+                    emit(DataState.SuccessRecipeInfo(resultsDao.getRecipes()))
+
+                    val cuisineCache = resultsDao.getRecipes()
+                    emit(DataState.SuccessRecipeByCuisine(cuisineCache))
+
+                }else{
+
+                    emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
+                    emit(DataState.SuccessRecipeInfo(recipesCache))
+
+                    val cuisineCache = resultsDao.getRecipes()
+                    emit(DataState.SuccessRecipeByCuisine(cuisineCache))
                 }
-
-                emit(DataState.SuccessRecipe(resultsCacheMapper.mapFromEntityListResults(resultsCache)))
-                emit(DataState.SuccessRecipeInfo(recipesCache))
-
-                val cuisineCache = resultsDao.getRecipes()
-                emit(DataState.SuccessRecipeByCuisine(cuisineCache))
 
             }catch (e:Exception){
                 emit(DataState.ErrorRecipe(e))

@@ -1,5 +1,7 @@
 package com.uca.attentiprecipes
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
@@ -35,7 +37,7 @@ constructor(
     var url : String? = null
     var sourceName : String? = null
     var summary : String? = null
-    var prices : Float? = null
+    var cal : Float? = null
     var image : String? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +49,7 @@ constructor(
         url = arguments?.getString("url")
         sourceName = arguments?.getString("sourceName")
         summary = arguments?.getString("summary")
-        prices = arguments?.getFloat("price")
+        cal = arguments?.getFloat("calories")
         image = arguments?.getString("image")
 
         // Inflate the layout for this fragment
@@ -56,6 +58,7 @@ constructor(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         var title : TextView = view.nametypeD
         title.text = name
@@ -72,15 +75,25 @@ constructor(
         plates.text = "Servings: $servings"
 
         var details : TextView = view.infoDetails
-//        details.text = summary
         details.setText(Html.fromHtml(summary).toString());
 
         var costs : TextView = view.price
-        costs.text = "Price per servings: $"+ prices
+        costs.text = "Health score: $cal%"
 
         var infoBtn : MaterialButton = view.btnInfo
         infoBtn.text = "More info in $sourceName"
 
+        infoBtn.setOnClickListener{
+            sendingToWikipedia()
+        }
+
+    }
+
+    private fun sendingToWikipedia() {
+        if(url == null) return
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 
 }

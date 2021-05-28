@@ -3,7 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/typeCuisines">
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.uca.attentiprecipes.ui.fragments.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+
+        <action android:id="@+id/action_recipes"
+            app:destination="@id/allRecipes"/>
+
+        <action android:id="@+id/action_cuisines"
+            app:destination="@id/typeCuisines"/>
+
+    </fragment>
 
     <fragment
         android:id="@+id/allRecipes"
@@ -11,21 +25,20 @@
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
         <action android:id="@+id/action_a_to_b"
-            app:destination="@id/detailsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+            app:destination="@id/detailsFragment"/>
     </fragment>
+
     <fragment
         android:id="@+id/typeCuisines"
         android:name="com.uca.attentiprecipes.ui.fragments.CuisinesFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_cuisines">
     </fragment>
+
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.uca.attentiprecipes.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details"/>
+
 </navigation>

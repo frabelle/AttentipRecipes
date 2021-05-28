@@ -3,17 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/typeCuisines"
-        android:icon="@drawable/ic_baseline_cuisine"
-        android:title="@string/cuisines"
-        app:showAsAction="always"
-        />
-
-    <item
         android:id="@+id/allRecipes"
         android:icon="@drawable/ic_baseline_recipes"
         android:title="@string/recipes"
         app:showAsAction="always"
         />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_cuisine"
+        android:title="@string/home"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/typeCuisines"
+        android:icon="@drawable/ic_baseline_restaurant_24"
+        android:title="@string/cuisines"
+        app:showAsAction="always"
+        />
+
 
 </menu>

@@ -16,6 +16,11 @@ import kotlinx.android.synthetic.main.item_types.view.*
 class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
 
     var types: MutableList<Cuisine>  = ArrayList()
+    private var tapListener: ItemTapCuisine? = null
+
+    fun setOnItemTapListener(tapListener: ItemTapCuisine) {
+        this.tapListener = tapListener
+    }
 
     fun RecyclerAdapter(types : MutableList<Cuisine>){
         this.types = types
@@ -35,7 +40,7 @@ class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
         return types.size
     }
 
-    class ViewHolder(view:View): RecyclerView.ViewHolder(view){
+    inner class ViewHolder(view:View): RecyclerView.ViewHolder(view), View.OnClickListener{
 
         val typename: TextView = view.nametype
         val imageView: ImageView = view.imagetype
@@ -43,6 +48,15 @@ class AdapterCuisines() : RecyclerView.Adapter<AdapterCuisines.ViewHolder>() {
         fun bind(type:Cuisine){
            typename.text = type.typename
             imageView.setImageResource(type.image)
+        }
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            var model = types.get(adapterPosition)
+            tapListener?.onCuisineTap(model,adapterPosition)
         }
 
     }

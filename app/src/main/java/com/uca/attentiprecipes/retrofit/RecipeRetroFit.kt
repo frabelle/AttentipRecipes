@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface RecipeRetroFit {
 
-    @GET("recipes/complexSearch?apiKey="+ API_KEY_SPOONACULAR + "&addRecipeInformation=true&number=100")
+    @GET("recipes/complexSearch?apiKey="+ API_KEY_SPOONACULAR + "&addRecipeInformation=true&number=80")
     suspend fun get(): ResultsNetworkEntity
 
 }

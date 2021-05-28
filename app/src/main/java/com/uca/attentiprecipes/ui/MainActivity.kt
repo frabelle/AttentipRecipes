@@ -8,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.uca.attentiprecipes.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,13 +27,15 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.main_fragment_container)
         val appBarConfiguration = AppBarConfiguration(
                 setOf(
-                        R.id.typeCuisines,
-                        R.id.allRecipes
+                        R.id.allRecipes,
+                        R.id.home,
+                        R.id.typeCuisines
                 )
         )
 
         bottom_navigation.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
     }
 
     private fun settingToolbar(){
