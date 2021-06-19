@@ -1,12 +1,27 @@
-# Attentip_PulpiRecipes
+# Attentip's Recipes
 
-Proyecto Final para la asignatura Desarrollo de Aplicaciones Móviles II
+## Description
 
-Integrantes: 
- - Alejandro Hernández Peréz 
- - Bayola Carcache Pallais
- - Carol Guevara Ramírez
- - Kevin Estrada Loaisiga
- - Odalys Icaza Valdez
- - Renchi Meléndez Simplina
- - Winston Dominguez Rivera
+🥗 **Attentip's Recipes** is an android app where you can discover amazing recipes and learn more about cuisines around the world.
+
+## Features
+* SQLite Local Database
+* Dependency injection
+* Repository factory
+* Singleton
+* APIs Rest
+* Architectural pattern **MVVM**/**MVI**
+* Offline connection
+* Uniflow
+* Fragments
+* Navigation Graph
+
+## Preview
+
+## API Documentation
+
+📃 Documentation of the consumed data https://spoonacular.com/food-api/docs
+
+📌 Endpoint used: https://api.spoonacular.com/recipes
+
+
