@@ -18,6 +18,8 @@
 
 ## Preview
 
+<img src="https://github.com/frabelle/Attentip_PulpiRecipes/blob/master/app/src/main/res/drawable/AttentipRecipes1.gif" width="300" />
+
 ## API Documentation
 
 📃 Documentation of the consumed data https://spoonacular.com/food-api/docs
